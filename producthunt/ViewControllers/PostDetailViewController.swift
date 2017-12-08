@@ -33,7 +33,6 @@ class PostDetailViewController: UIViewController {
         self.descriptionLabel.text = post?.description
         self.upvoteLabel.text = "\(post?.voteCount ?? 0) upvotes"
         self.imageView.sd_setImage(with: URL(string: post!.screenshot!)!, completed: nil)
-        print(post!.screenshot!)
     }
     
     @IBAction func btnGetItTouched(_ sender: Any) {

@@ -26,7 +26,6 @@ class ProductsTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
         // retrieve data
-        self.refreshControl?.beginRefreshing()
         refreshData()
         
         // Register for topic changing
@@ -38,6 +37,7 @@ class ProductsTableViewController: UITableViewController {
     func getTitleForBtnChooseTopic() {
         btnChooseTopic.setTitle(Setting.currentTopicSlug, for: .normal)
     }
+    
     
     @objc func refreshData() {
         // Retrieve title
