@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import ProgressHUD
 
 class ProductsTableViewController: UITableViewController {
     
@@ -43,11 +44,13 @@ class ProductsTableViewController: UITableViewController {
         // Retrieve title
         getTitleForBtnChooseTopic()
         
+        ProgressHUD.show("Loading...", interaction: false)
         Post.getAll { (error, posts) in
             if error != nil {
-                // TODO: Error handling
+                ProgressHUD.showError(error!.localizedDescription)
             } else if posts != nil {
                 self.posts = posts!
+                ProgressHUD.dismiss()
             }
             self.refreshControl?.endRefreshing()
         }

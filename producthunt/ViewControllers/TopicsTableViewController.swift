@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class TopicsTableViewController: UITableViewController {
 
@@ -17,14 +18,15 @@ class TopicsTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.refreshControl?.beginRefreshing()
+        ProgressHUD.show("Loading...", interaction: false)
         Topic.getTrendingTopics { (error, topics) in
             if error != nil {
-                
+                ProgressHUD.showError(error?.localizedDescription)
             } else if topics != nil {
                 self.topics = topics!
+                ProgressHUD.dismiss()
             }
-            self.refreshControl?.endRefreshing()
+            
         }
     }
 

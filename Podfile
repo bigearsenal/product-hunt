@@ -9,6 +9,7 @@ target 'producthunt' do
   pod 'Alamofire', '~> 4.5'
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftyJSON'
+  pod 'ProgressHUD'
   
   target 'producthuntTests' do
     inherit! :search_paths
