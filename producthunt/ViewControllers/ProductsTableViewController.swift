@@ -88,8 +88,10 @@ class ProductsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! PostDetailViewController
-        destination.post = (sender as! Post)
+        if segue.identifier == "segueToPostDetail" {
+            let destination = segue.destination as! PostDetailViewController
+            destination.post = (sender as! Post)
+        }
     }
 
 }

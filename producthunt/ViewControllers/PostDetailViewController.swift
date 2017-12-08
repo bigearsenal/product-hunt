@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PostDetailViewController: UIViewController {
 
-    var post: Post? {
-        didSet {
-            reloadViews()
-        }
-    }
+    var post: Post?
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var upvoteLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        reloadViews()
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +30,13 @@ class PostDetailViewController: UIViewController {
     // MARK: - Actions
     func reloadViews() {
         self.title = post?.name
+        self.descriptionLabel.text = post?.description
+        self.upvoteLabel.text = "\(post?.voteCount ?? 0) upvotes"
+        self.imageView.sd_setImage(with: URL(string: post!.screenshot!)!, completed: nil)
+        print(post!.screenshot!)
+    }
+    
+    @IBAction func btnGetItTouched(_ sender: Any) {
     }
     
 
