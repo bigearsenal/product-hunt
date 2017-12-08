@@ -1,0 +1,6 @@
+framework module Pods_producthunt {
+  umbrella header "Pods-producthunt-umbrella.h"
+
+  export *
+  module * { export * }
+}
