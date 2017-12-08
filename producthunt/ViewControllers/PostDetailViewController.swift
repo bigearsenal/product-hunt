@@ -37,6 +37,8 @@ class PostDetailViewController: UIViewController {
     }
     
     @IBAction func btnGetItTouched(_ sender: Any) {
+        guard let urlString = post?.url, let url = URL(string: urlString) else {return}
+        UIApplication.shared.open(url)
     }
     
 

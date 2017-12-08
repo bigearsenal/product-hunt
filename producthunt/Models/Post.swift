@@ -15,6 +15,7 @@ struct Post {
     var voteCount: Int?
     var thumbnailImage: String?
     var screenshot: String?
+    var url: String?
     
     init(from json: JSON) {
         self.name = json["name"].string
@@ -22,6 +23,7 @@ struct Post {
         self.voteCount = json["votes_count"].int
         self.thumbnailImage = json["thumbnail"]["image_url"].string
         self.screenshot = json["screenshot_url"]["850px"].string
+        self.url = json["redirect_url"].string
     }
     
     static func getAll(completion: ((Error?, [Post]?) -> Void)?) {
