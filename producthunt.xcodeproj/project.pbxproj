@@ -20,6 +20,7 @@
 		BCAC45F81FDAC537002337B3 /* TopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC45F71FDAC537002337B3 /* TopicsTableViewController.swift */; };
 		BCAC45FA1FDAC6C6002337B3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC45F91FDAC6C6002337B3 /* Settings.swift */; };
 		BCAC45FD1FDAD08E002337B3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC45FC1FDAD08E002337B3 /* PostCell.swift */; };
+		BCAC45FF1FDAE199002337B3 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC45FE1FDAE199002337B3 /* PostDetailViewController.swift */; };
 		FCB0E55849F1F6C22836C2AB /* Pods_producthunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910DFA8960209D0D95B2A54 /* Pods_producthunt.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		BCAC45F71FDAC537002337B3 /* TopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTableViewController.swift; sourceTree = "<group>"; };
 		BCAC45F91FDAC6C6002337B3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BCAC45FC1FDAD08E002337B3 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		BCAC45FE1FDAE199002337B3 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		C08F94E3693D652DCBA76911 /* Pods-producthunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-producthunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-producthunt/Pods-producthunt.release.xcconfig"; sourceTree = "<group>"; };
 		C910DFA8960209D0D95B2A54 /* Pods_producthunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_producthunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BE6F7392A6C44434DE1010 /* Pods_producthuntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_producthuntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 			children = (
 				BCAC45F51FDABCCD002337B3 /* ProductsTableViewController.swift */,
 				BCAC45F71FDAC537002337B3 /* TopicsTableViewController.swift */,
+				BCAC45FE1FDAE199002337B3 /* PostDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				BCAC45F21FDAB9E2002337B3 /* Topic.swift in Sources */,
 				BCAC45CB1FDAA80B002337B3 /* AppDelegate.swift in Sources */,
 				BCAC45F81FDAC537002337B3 /* TopicsTableViewController.swift in Sources */,
+				BCAC45FF1FDAE199002337B3 /* PostDetailViewController.swift in Sources */,
 				BCAC45FA1FDAC6C6002337B3 /* Settings.swift in Sources */,
 				BCAC45F41FDABA30002337B3 /* Post.swift in Sources */,
 				BCAC45F61FDABCCD002337B3 /* ProductsTableViewController.swift in Sources */,
