@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,20 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PostCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="166" id="xrv-YM-rvh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="166"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PostCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="160" id="xrv-YM-rvh" customClass="PostCell" customModule="producthunt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xrv-YM-rvh" id="0Vz-gj-f2j">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="165.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hnf-R4-gCj">
-                                            <rect key="frame" x="16" y="11" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="hnf-R4-gCj" secondAttribute="height" multiplier="1:1" id="hND-yz-P1w"/>
-                                                <constraint firstAttribute="width" constant="100" id="jFX-AT-VYT"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELr-03-bp9">
                                             <rect key="frame" x="124" y="11" width="235" height="30"/>
                                             <constraints>
@@ -53,35 +45,48 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upvote" translatesAutoresizingMaskIntoConstraints="NO" id="HXr-zW-x5S">
-                                            <rect key="frame" x="86" y="119" width="30" height="30"/>
+                                            <rect key="frame" x="96" y="119" width="20" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="45w-mE-bYT"/>
-                                                <constraint firstAttribute="width" constant="30" id="957-wu-6Od"/>
+                                                <constraint firstAttribute="height" constant="20" id="45w-mE-bYT"/>
+                                                <constraint firstAttribute="width" constant="20" id="957-wu-6Od"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%% upvotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tll-HE-Ejt">
-                                            <rect key="frame" x="124" y="124" width="235" height="21"/>
+                                            <rect key="frame" x="124" y="119" width="235" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-1X-KiO">
+                                            <rect key="frame" x="16" y="11" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="DoY-P3-p3q"/>
+                                                <constraint firstAttribute="width" constant="100" id="gpu-SF-E5s"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="HXr-zW-x5S" firstAttribute="top" secondItem="sjA-Wr-CTo" secondAttribute="bottom" constant="8" id="2KA-0g-UEs"/>
                                         <constraint firstItem="tll-HE-Ejt" firstAttribute="centerY" secondItem="HXr-zW-x5S" secondAttribute="centerY" id="3E0-LB-1Dn"/>
                                         <constraint firstItem="sjA-Wr-CTo" firstAttribute="top" secondItem="ELr-03-bp9" secondAttribute="bottom" constant="8" id="C9k-q0-1kx"/>
+                                        <constraint firstItem="ELr-03-bp9" firstAttribute="leading" secondItem="cIS-1X-KiO" secondAttribute="trailing" constant="8" id="EtE-Vn-wxr"/>
                                         <constraint firstItem="tll-HE-Ejt" firstAttribute="leading" secondItem="HXr-zW-x5S" secondAttribute="trailing" constant="8" id="Kel-5m-dTi"/>
-                                        <constraint firstItem="sjA-Wr-CTo" firstAttribute="leading" secondItem="hnf-R4-gCj" secondAttribute="trailing" constant="8" id="MaQ-zW-fWB"/>
                                         <constraint firstItem="ELr-03-bp9" firstAttribute="top" secondItem="0Vz-gj-f2j" secondAttribute="topMargin" id="OjQ-G5-yC2"/>
-                                        <constraint firstItem="HXr-zW-x5S" firstAttribute="top" secondItem="hnf-R4-gCj" secondAttribute="bottom" constant="8" id="S1N-y4-sqh"/>
-                                        <constraint firstItem="hnf-R4-gCj" firstAttribute="top" secondItem="0Vz-gj-f2j" secondAttribute="topMargin" id="UyR-kt-ZLK"/>
-                                        <constraint firstItem="hnf-R4-gCj" firstAttribute="leading" secondItem="0Vz-gj-f2j" secondAttribute="leadingMargin" id="ahW-ym-r0b"/>
+                                        <constraint firstItem="sjA-Wr-CTo" firstAttribute="leading" secondItem="cIS-1X-KiO" secondAttribute="trailing" constant="8" id="Pw3-Cd-rKI"/>
+                                        <constraint firstItem="cIS-1X-KiO" firstAttribute="top" secondItem="0Vz-gj-f2j" secondAttribute="topMargin" id="TaK-Ax-Z2j"/>
                                         <constraint firstItem="tll-HE-Ejt" firstAttribute="trailing" secondItem="0Vz-gj-f2j" secondAttribute="trailingMargin" id="bl9-oO-7iz"/>
-                                        <constraint firstItem="ELr-03-bp9" firstAttribute="leading" secondItem="hnf-R4-gCj" secondAttribute="trailing" constant="8" id="dIY-es-f4k"/>
                                         <constraint firstItem="sjA-Wr-CTo" firstAttribute="trailing" secondItem="0Vz-gj-f2j" secondAttribute="trailingMargin" id="eny-XH-NkC"/>
-                                        <constraint firstItem="HXr-zW-x5S" firstAttribute="leading" secondItem="0Vz-gj-f2j" secondAttribute="leadingMargin" constant="70" id="jby-1c-dpQ"/>
+                                        <constraint firstItem="cIS-1X-KiO" firstAttribute="leading" secondItem="0Vz-gj-f2j" secondAttribute="leadingMargin" id="iEh-po-LYa"/>
+                                        <constraint firstItem="HXr-zW-x5S" firstAttribute="leading" secondItem="0Vz-gj-f2j" secondAttribute="leadingMargin" constant="80" id="jby-1c-dpQ"/>
                                         <constraint firstItem="ELr-03-bp9" firstAttribute="trailing" secondItem="0Vz-gj-f2j" secondAttribute="trailingMargin" id="pBX-zH-8ck"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="sjA-Wr-CTo" id="q6o-yQ-IJL"/>
+                                    <outlet property="thumbnailImage" destination="cIS-1X-KiO" id="7YW-ec-Wgu"/>
+                                    <outlet property="titleLabel" destination="ELr-03-bp9" id="mkg-ZF-Z7L"/>
+                                    <outlet property="upvotesLabel" destination="tll-HE-Ejt" id="MT3-ZT-1dP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -100,6 +105,9 @@
                             </connections>
                         </button>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="5zy-jd-s4t">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="btnChooseTopic" destination="my4-ub-zbX" id="nFB-nr-9Hs"/>
                     </connections>
@@ -121,7 +129,13 @@
                             <outlet property="delegate" destination="iY6-0i-vPp" id="bJg-Jc-fJO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Topics" id="QjM-ib-oWH"/>
+                    <navigationItem key="navigationItem" title="Topics" id="QjM-ib-oWH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ewD-Ac-y2H">
+                            <connections>
+                                <action selector="cancelButtonTouched:" destination="iY6-0i-vPp" id="xXT-g5-bEj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rA-NB-NEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

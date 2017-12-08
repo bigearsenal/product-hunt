@@ -18,7 +18,7 @@ struct Post {
     init(from json: JSON) {
         self.name = json["name"].string
         self.description = json["tagline"].string
-        self.voteCount = json["vote_count"].int
+        self.voteCount = json["votes_count"].int
         self.thumbnailImage = json["thumbnail"]["image_url"].string
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductsTableViewController: UITableViewController {
     
@@ -20,11 +21,27 @@ class ProductsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add pull-to-refresh feature
+        self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
+        // retrieve data
+        self.refreshControl?.beginRefreshing()
+        refreshData()
+        
+        // Register for topic changing
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: Setting.CurrentTopicSlugDidChangeNotification), object: nil)
+    }
+
+    
+    // MARK: - Actions
+    func getTitleForBtnChooseTopic() {
+        btnChooseTopic.setTitle(Setting.currentTopicSlug, for: .normal)
+    }
+    
+    @objc func refreshData() {
         // Retrieve title
         getTitleForBtnChooseTopic()
-        
-        // Prepare for fetching
-        self.refreshControl?.beginRefreshing()
         
         Post.getAll { (error, posts) in
             if error != nil {
@@ -34,12 +51,6 @@ class ProductsTableViewController: UITableViewController {
             }
             self.refreshControl?.endRefreshing()
         }
-    }
-
-    
-    // MARK: - Actions
-    func getTitleForBtnChooseTopic() {
-        btnChooseTopic.setTitle(Setting.currentTopicSlug, for: .normal)
     }
 
     // MARK: - Table view data source
@@ -54,11 +65,21 @@ class ProductsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        
+        let post = posts[indexPath.row]
+        cell.titleLabel.text = post.name
+        cell.descriptionLabel.text = post.description
+        cell.upvotesLabel.text = "\(post.voteCount ?? 0) upvotes"
+        cell.thumbnailImage.sd_setImage(with: URL(string: post.thumbnailImage!)!, completed: nil)
         
         // Configure the cell...
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
     }
 
 }
