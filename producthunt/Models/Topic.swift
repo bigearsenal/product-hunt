@@ -20,8 +20,8 @@ class Topic {
     }
     
     // MARK: Static functions
-    static func getAll(completion: ((Error?, [Topic]?) -> Void)?) {
-        HTTP.get(path: "topics") { (error, json) in
+    static func getTrendingTopics(completion: ((Error?, [Topic]?) -> Void)?) {
+        HTTP.get(path: "topics?search[trending]=true") { (error, json) in
             // Catching Error
             guard error == nil else {
                 completion?(error, nil)
